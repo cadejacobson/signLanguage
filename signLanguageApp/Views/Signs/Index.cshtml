@@ -1,4 +1,4 @@
-﻿@model IEnumerable<signLanguageApp.Models.Sign>
+﻿@model signLanguageApp.ViewModels.SignViewModel
 
 @{
     ViewData["Title"] = "Sign Database";
@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Signs) {
         <tr>
             <td>
                 <img style="width:150px;height:150px" src="~/images/@Html.DisplayFor(modelItem => item.Image)">

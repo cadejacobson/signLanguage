@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using signLanguageApp.Data;
 using signLanguageApp.Models;
+using signLanguageApp.ViewModels;
 
 namespace signLanguageApp.Controllers
 {
@@ -22,7 +23,16 @@ namespace signLanguageApp.Controllers
         // GET: Signs
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Sign.ToListAsync());
+            var signs = from s in _context.Sign
+                           select s;
+
+            var SignNameViewModel = new SignViewModel
+            {
+                Signs = await signs.ToListAsync()
+            };
+
+
+            return View(SignNameViewModel);
         }
 
         // GET: Signs/Details/5
