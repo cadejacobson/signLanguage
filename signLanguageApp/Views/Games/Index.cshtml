@@ -9,14 +9,18 @@
 
 @foreach (var item in Model.Signs)
 {
-    <a asp-area="" asp-controller="Games" asp-action="Letters">
+    
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="~/images/@Html.DisplayFor(modelItem => item.Image)" alt="@item.Image">
-
+            <a asp-area="" asp-controller="Games" asp-action="Letters">
+                <img class="card-img-top" src="~/images/@Html.DisplayFor(modelItem => item.Image)" alt="@item.Image">
+            </a>
+            <a asp-area="" asp-controller="Games" asp-action="Letters"> @*Change css to not underline/be blue*@
             <div class="card-body">
                 <h5 class="card-title">@item.Name</h5>
-                <p class="card-text">Name: @Html.DisplayFor(model => item.Name)</p>
             </div>
+            </a>
         </div>
-    </a>
+
 }
+
+@* maybe make this the game manager page and Letters the playing page, where it is passed a collection?*@
