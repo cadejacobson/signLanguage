@@ -23,7 +23,15 @@ namespace signLanguageApp.Controllers
                 Signs = await signs.ToListAsync()
             };
 
+            //This has to group by collection :) Thanks
+
             return View(SignNameViewModel);
+        }
+
+
+        public IActionResult Letters()
+        {
+            return View();
         }
     }
 }
