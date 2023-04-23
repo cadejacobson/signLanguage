@@ -37,5 +37,19 @@ namespace signLanguageApp.Controllers
         {
             return View();
         }
+
+        public async Task<IActionResult> PickTwo(string collection)
+        {
+            var signs = from s in _context.Sign
+                        where s.Collection == collection
+                        select s;
+
+            var SignNameViewModel = new SignViewModel
+            {
+                Signs = await signs.ToListAsync(),
+            };
+
+            return View();
+        }
     }
 }
