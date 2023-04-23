@@ -27,8 +27,6 @@ namespace signLanguageApp.Controllers
                 Collections = collections
             };
 
-            //This has to group by collection :) Thanks
-
             return View(SignNameViewModel);
         }
 
