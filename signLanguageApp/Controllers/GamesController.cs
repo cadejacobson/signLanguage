@@ -18,9 +18,13 @@ namespace signLanguageApp.Controllers
             var signs = from s in _context.Sign
                         select s;
 
+            var collections = _context.Sign.Select(ts => ts.Collection).Distinct().ToList();
+
+
             var SignNameViewModel = new SignViewModel
             {
-                Signs = await signs.ToListAsync()
+                Signs = await signs.ToListAsync(),
+                Collections = collections
             };
 
             //This has to group by collection :) Thanks

@@ -26,5 +26,6 @@ namespace signLanguageApp.ViewModels
         public string Collection { get; set; }
 
         public IEnumerable<Sign> Signs { get; set; }
+        public List<string> Collections { get; set; }
     }
 }
