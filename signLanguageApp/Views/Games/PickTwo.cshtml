@@ -7,7 +7,7 @@
 <h1>Pick Two</h1>
 
 <div id="card-container">
-    <p>Which card is: <span id="generated-value"></span></p>
+    <p>Which card is: <span id="correctCardSpan"></span></p>
   <div class="card">
     <img class="card-image" src="" alt="">
   </div>
@@ -28,6 +28,9 @@
 
     const cardContainer = document.getElementById("card-container");
     const startButton = document.getElementById("start-button");
+    const correctCard = parseInt(Math.random() * dataModels.length);
+    const correctCardSpan = document.getElementById("correctCardSpan");
+    correctCardSpan.textContent = correctCard;
 
     startButton.addEventListener("click", startGame);
 
@@ -65,7 +68,7 @@
         .find(card => card !== clickedCard);
       const clickedModelId = parseInt(clickedCard.dataset.id);
       const otherModelId = parseInt(otherCard.dataset.id);
-      const message = clickedModelId === otherModelId ? "Correct!" : "Wrong!";
+      const message = clickedModelId === correctCard ? "Correct!" : "Wrong!";
       alert(message);
     }
 
