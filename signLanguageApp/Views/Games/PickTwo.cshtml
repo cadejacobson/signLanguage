@@ -15,7 +15,9 @@
     <img class="card-image" src="" alt="">
   </div>
 </div>
+<button id="shuffle-button">Shuffle</button>
 <button id="start-button">Start Game</button>
+
 
 <script>
     const dataModels = [
@@ -26,6 +28,7 @@
         { id: 5, image: "https://www.pages2color.com/images/pages/letters-and-numbers/number-5-five.png" }
     ];
 
+    const roundCount = 0;
     const cardContainer = document.getElementById("card-container");
     const startButton = document.getElementById("start-button");
     const correctCard = parseInt(Math.random() * dataModels.length);
@@ -70,6 +73,12 @@
       const otherModelId = parseInt(otherCard.dataset.id);
       const message = clickedModelId === correctCard ? "Correct!" : "Wrong!";
       alert(message);
+
+      roundCount = roundCount + 1;
+      if(roundCount < 10)
+      {
+          startGame();
+      }
     }
 
 
