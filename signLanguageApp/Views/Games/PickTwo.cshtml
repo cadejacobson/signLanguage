@@ -33,12 +33,13 @@
     const startButton = document.getElementById("start-button");
     const correctCard = parseInt(Math.random() * dataModels.length);
     const correctCardSpan = document.getElementById("correctCardSpan");
-    correctCardSpan.textContent = correctCard;
 
     startButton.addEventListener("click", startGame);
 
+
     function startGame() {
         const randomModels = getRandomModels(dataModels, 2);
+        correctCardSpan.textContent = correctCard;
         showCards(randomModels);
     }
 
@@ -66,19 +67,19 @@
     }
 
     function handleCardClick(event) {
-      const clickedCard = event.currentTarget;
-      const otherCard = Array.from(cardContainer.querySelectorAll(".card"))
-        .find(card => card !== clickedCard);
-      const clickedModelId = parseInt(clickedCard.dataset.id);
-      const otherModelId = parseInt(otherCard.dataset.id);
-      const message = clickedModelId === correctCard ? "Correct!" : "Wrong!";
-      alert(message);
+        const clickedCard = event.currentTarget;
+        const otherCard = Array.from(cardContainer.querySelectorAll(".card"))
+            .find(card => card !== clickedCard);
+        const clickedModelId = parseInt(clickedCard.dataset.id);
+        const otherModelId = parseInt(otherCard.dataset.id);
+        const message = clickedModelId === correctCard ? "Correct!" : "Wrong!";
+        alert(message);
 
-      roundCount = roundCount + 1;
-      if(roundCount < 10)
-      {
-          startGame();
-      }
+        roundCount = roundCount + 1;
+        if(roundCount < 10)
+        {
+            startGame();
+        }
     }
 
 
