@@ -1,3 +1,7 @@
-name,image
-A,A.jpg
-B,B.jpg
+name,image,collection
+A,A.jpg,Letters
+B,B.jpg,Letters
+Dog,dog.jpg,Animals
+Cat,cat.jpg,Animals
+Bread,bread.jpg,Food
+Taco,taco.jpg,Food

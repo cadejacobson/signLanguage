@@ -1,0 +1,21 @@
+﻿@model signLanguageApp.ViewModels.SignViewModel
+
+@{
+    ViewData["Title"] = "Games";
+}
+
+<h1>Games</h1>
+
+
+@foreach (var item in Model.Collections)
+{
+    
+        <div class="card" style="width: 18rem;">
+        <a asp-area="" asp-controller="Games" asp-action="PickTwo" asp-route-collection="@item">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center">@item</h5>
+            </div>
+            </a>
+        </div>
+
+}

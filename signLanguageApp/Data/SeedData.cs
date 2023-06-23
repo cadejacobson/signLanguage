@@ -36,7 +36,8 @@ public static class SeedData
                         new Sign
                         {
                             Name = values[0],
-                            Image = values[1]
+                            Image = values[1],
+                            Collection = values[2]
                         }
                     );
                 }
